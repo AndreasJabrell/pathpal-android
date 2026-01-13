@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import se.jabrell.pathpal.navigation.AppNavigation
 import se.jabrell.pathpal.ui.theme.PathPalTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,6 +21,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            PathPalTheme {
+                AppNavigation()
+            }
+        }
+        /*setContent {
             PathPalTheme {
                 Scaffold(modifier = Modifier.fillMaxSize())
                 { innerPadding ->
@@ -32,7 +38,7 @@ class MainActivity : ComponentActivity() {
                         Greeting(name = "TOUR DE DANCE 2026")
                     }
                 }
-        }
+        }*/
     }
 }
 
@@ -42,5 +48,4 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
 }
